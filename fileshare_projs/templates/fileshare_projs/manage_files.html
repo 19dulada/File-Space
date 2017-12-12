@@ -1,0 +1,35 @@
+<html>
+	{% block content %}
+	<title>File View</title>
+	<head>
+		<a href="{% url 'fileshare_projs:index' %}">Home</a> takes you back to the homepage.
+	</head>
+	<body style="background-color: #ffcccc;">
+		<p>This is where you can view your files.</p>
+		{% load filetransfers %}
+		{% url upload.views.manage_files pk=upload.pk as fallback_url %}
+				
+	{% for f in file_list %}
+	
+			<li>
+				<p>	
+					
+					{{ f }}	
+					<a href="{% firstof upload.file|public_download_url fallback_url %}">Download</a>
+					
+
+					
+				</p> 
+				
+			</li>
+	
+		
+		
+	{% empty %}
+			
+			<li>No files uploaded yet.  Go to the <a href="{% url 'fileshare_projs:upload' %}">Upload</a> page to upload files.</li>
+	{% endfor %}
+		
+	</body>
+	{% endblock content %}
+</html>

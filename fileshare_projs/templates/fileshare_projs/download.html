@@ -1,0 +1,11 @@
+<html>
+	<title>Download</title>
+	<head>
+		<a href="{% url 'fileshare_projs:index' %}">Home</a> takes you back to the homepage.
+	</head>
+	<body style="background-color: #ccccff;"></body>
+	<p>This is where you can download your files.  Browse for the file below:</p>
+	{% load filetransfers %}
+	{% url upload.views.download pk=upload.pk as fallback_url %}
+	
+</html>

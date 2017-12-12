@@ -1,0 +1,19 @@
+<title>File Space</title>
+<head>File Space</head>
+<body style="background-color: #A3E4D7;"></body>
+<p> 
+	<a href="{% url 'fileshare_projs:upload' %}">Uploads</a> takes you to where you can upload your files.
+</p>
+<p>
+	<a href="{% url 'fileshare_projs:download' %}">Downloads</a> takes you to where you can download the files you want.
+</p>
+<p>
+	<a href="{% url 'fileshare_projs:manage_files' %}">File View</a> takes to where you can manage the files you have uploaded.
+</p>
+<p>
+	<a href="{% url 'fileshare_projs:troubleshooting' %}">Troubleshooting</a> takes you to where you can post your code to get errors resolved by other users.
+</p>
+{% block content %}{% endblock content %}
+
+
+

@@ -1,0 +1,23 @@
+<html>
+	<title>Upload</title>
+	<head>
+		<a href="{% url 'fileshare_projs:index' %}">Home</a> takes you back to the homepage.</head>
+	<body style="background-color: powderblue;"></body>
+		<p>This is where you can upload your files.  Browse for your files in the box below:</p>
+{% load static %}
+{% block content %}
+
+ <form action="{% url 'fileshare_projs:upload' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="file" name="file_file">
+		File Name: <input type="text" name="file_name">
+		Uploaded By: <input type="text" name="file_author">
+		<button type="submit">Upload</button>
+	</form>
+    
+
+
+{% endblock content%}
+
+</html>
